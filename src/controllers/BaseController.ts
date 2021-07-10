@@ -48,8 +48,8 @@ export default class BaseController {
       status: 'error',
       statusCode: _statusCode,
       message:
-        message || _statusCode === 500 ? 'internal server error' : message,
-      data: error || null,
+        message || (_statusCode === 500 ? 'internal server error' : message),
+      error: error || null,
     };
 
     return res.status(_statusCode).send(response);

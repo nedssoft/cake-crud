@@ -6,7 +6,9 @@ const { body } = require('express-validator');
  */
 
 export const createCakeSchema = [
-  body('name', 'name field is required').trim().notEmpty().isString(),
+  body('name', 'name field is required').trim().escape().notEmpty().isString()
+  .custom((value: string) => !(new RegExp(/\s\s+/).test(value)))
+  .withMessage('Double whitespace is not allowed in the name'),
   body('comment', 'comment field is required')
     .trim()
     .notEmpty()
