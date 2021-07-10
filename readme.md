@@ -1,6 +1,6 @@
 # Api Docs
 
-> BASE_URL : https://cake_api.herokuapp.com/api/
+> BASE_URL : https://cake-apii.herokuapp.com/api/
 
 > [Link to the API documentation](https://documenter.getpostman.com/view/4448465/Tzm6ncKU)
 
