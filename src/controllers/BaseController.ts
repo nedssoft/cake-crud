@@ -10,7 +10,7 @@ export default class BaseController {
   }
 
   /**
-   *
+   * Return formatted success response
    * @param {object} res
    * @param {string} message
    * Formats successful response
@@ -32,7 +32,7 @@ export default class BaseController {
   }
 
   /**
-   *
+   * Return formatted error response
    * @param {object} res
    * @param {string} message
    * Formats failed response
