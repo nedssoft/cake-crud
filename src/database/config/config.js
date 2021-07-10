@@ -11,8 +11,7 @@ module.exports = {
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'cake_dev_db',
     host: process.env.DB_HOST || 'localhost',
-    dialect: 'sqlite',
-    storage: '.dev_db'
+    dialect: process.env.DB_DIALECT || 'sqlite',
   },
   test: {
     username: process.env.DB_USER ||  'root',
