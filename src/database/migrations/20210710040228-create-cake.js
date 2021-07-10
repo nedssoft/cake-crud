@@ -4,13 +4,10 @@ module.exports = {
     return queryInterface.createTable('cakes', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.NUMBER
-      },
+      
       name: {
         type: Sequelize.STRING
       },
