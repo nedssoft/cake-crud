@@ -1,8 +1,8 @@
 # Api Docs
 
-> BASE_URL : https://umts-backend.herokuapp.com/api/
+> BASE_URL : https://cake_api.herokuapp.com/api/
 
-> [Link to the API documentation](https://documenter.getpostman.com/view/4448465/SVYkw1n2?version=latest)
+> [Link to the API documentation](https://documenter.getpostman.com/view/4448465/Tzm6ncKU)
 
 
 # Endpoints Summary
