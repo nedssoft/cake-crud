@@ -27,7 +27,6 @@
   - `git clone https://github.com/nedssoft/cake-crud.git && cd cake-crud`
   - `touch .env && cp .env.example .env`
   - `npm install`
-  - `npm run migrate`
   - `npm run dev`
 
 ## Test
