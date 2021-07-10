@@ -53,12 +53,16 @@ export default class CakeController extends BaseController {
   }
 
   async getCakeDetails(req: Request, res: Response) {
-
     const { cake_id } = req.params;
     try {
-      const cake = await this.models.Cake.findByPk(cake_id) as Cake;
-      if(!cake) {
-        return this.respondWithError(res, 'Cake with specified ID does not exist', null, 404);
+      const cake = (await this.models.Cake.findByPk(cake_id)) as Cake;
+      if (!cake) {
+        return this.respondWithError(
+          res,
+          'Cake with specified ID does not exist',
+          null,
+          404,
+        );
       }
       return this.respondWithSuccess(res, 'success', cake);
     } catch (err) {
@@ -69,12 +73,37 @@ export default class CakeController extends BaseController {
   async updateCake(req: Request, res: Response) {
     const { cake_id } = req.params;
     try {
-      const cake = await this.models.Cake.findByPk(cake_id) as Cake;
-      if(!cake) {
-        return this.respondWithError(res, 'Cake with specified ID does not exist', null, 404);
+      const cake = (await this.models.Cake.findByPk(cake_id)) as Cake;
+      if (!cake) {
+        return this.respondWithError(
+          res,
+          'Cake with specified ID does not exist',
+          null,
+          404,
+        );
       }
       const updatedCake = await cake.update(req.body);
       return this.respondWithSuccess(res, 'success', updatedCake);
+    } catch (err) {
+      this.respondWithError(res, '', err);
+    }
+  }
+
+  async deleteCake(req: Request, res: Response) {
+    const { cake_id } = req.params;
+    try {
+      const cake = (await this.models.Cake.findByPk(cake_id)) as Cake;
+      if (!cake) {
+        return this.respondWithError(
+          res,
+          'Cake with specified ID does not exist',
+          null,
+          404,
+        );
+      }
+      await cake.destroy();
+
+      return this.respondWithSuccess(res, 'success');
     } catch (err) {
       this.respondWithError(res, '', err);
     }
