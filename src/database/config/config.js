@@ -20,6 +20,7 @@ module.exports = {
     database: process.env.DB_NAME || 'cake_test_db',
     host: process.env.DB_HOST || 'localhost',
     dialect: 'sqlite',
+    storage: path.join(__dirname, '../test_db'),
   },
   production: {
     username: process.env.DB_USER,
