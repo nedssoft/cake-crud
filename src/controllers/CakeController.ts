@@ -62,7 +62,21 @@ export default class CakeController extends BaseController {
       }
       return this.respondWithSuccess(res, 'success', cake);
     } catch (err) {
-      
+      this.respondWithError(res, '', err);
+    }
+  }
+
+  async updateCake(req: Request, res: Response) {
+    const { cake_id } = req.params;
+    try {
+      const cake = await this.models.Cake.findByPk(cake_id) as Cake;
+      if(!cake) {
+        return this.respondWithError(res, 'Cake with specified ID does not exist', null, 404);
+      }
+      const updatedCake = await cake.update(req.body);
+      return this.respondWithSuccess(res, 'success', updatedCake);
+    } catch (err) {
+      this.respondWithError(res, '', err);
     }
   }
 }
