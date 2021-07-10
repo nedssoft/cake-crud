@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = envConfigs[env];
 
 const uri: string = config.url || '';
- const modelPath = ['development', 'test'].includes(env) ? '/**/*.model.ts' : '/**/*.model.js'
+ const modelPath = '/**/*.model.js'
 let sequelize: Sequelize;
 
 if (config.url) {
@@ -25,5 +25,6 @@ if (config.url) {
     },
   });
 }
+
 
 export { Sequelize, sequelize };

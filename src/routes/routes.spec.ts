@@ -3,6 +3,8 @@ import server from '../api';
 import { sequelize } from '../database/models';
 const { Cake } = sequelize.models;
 
+
+
 beforeEach(async () => {
   await sequelize.truncate();
 });

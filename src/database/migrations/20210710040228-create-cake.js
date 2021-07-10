@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       yumFactor: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Cakes');
+    return queryInterface.dropTable('cakes');
   }
 };

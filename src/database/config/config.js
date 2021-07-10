@@ -9,10 +9,10 @@ module.exports = {
   development: {
     username: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'cake_db',
+    database: process.env.DB_NAME || 'cake_dev_db',
     host: process.env.DB_HOST || 'localhost',
     dialect: 'sqlite',
-    storage: path.join(__dirname, '../db'),
+    storage: '.dev_db'
   },
   test: {
     username: process.env.DB_USER ||  'root',
@@ -20,14 +20,14 @@ module.exports = {
     database: process.env.DB_NAME || 'cake_test_db',
     host: process.env.DB_HOST || 'localhost',
     dialect: 'sqlite',
-    storage: path.join(__dirname, '../test_db'),
+    storage: '.test_db',
   },
   production: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
-    dialect: 'postgres',
-    logging: false,
+    username: process.env.DB_USER ||  'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'cake_prod_db',
+    host: process.env.DB_HOST || 'localhost',
+    dialect: 'sqlite',
+    storage: '.prod_db',
   },
 };
