@@ -6,9 +6,10 @@
   "scripts": {
     "start": "node build/index.js",
     "dev": "nodemon build/index.js",
+    "prestart": "npm run build",
     "predev": "npm run dev:build",
     "clean": "rimraf build && mkdir build",
-    "build": "npm run clean && npx tsc",
+    "build": "npm run clean && npx tsc && npm run migrate",
     "dev:build": "npm run clean && npx tsc && npm run migrate",
     "prettify": "prettier --write ./src",
     "migrate": "npx sequelize-cli db:migrate",
