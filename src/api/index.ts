@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', routes);
 
-//default landing:
+
 app.all('*', (req, res) => {
   res.status(404).send({
     status: 'failed',
