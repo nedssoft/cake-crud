@@ -1,3 +1,5 @@
+
+[![Build Status](https://travis-ci.com/nedssoft/cake-crud.svg?branch=main)](https://travis-ci.com/nedssoft/cake-crud)
 # Api Docs
 
 > BASE_URL : https://cake-apii.herokuapp.com/api/
