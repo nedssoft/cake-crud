@@ -1,11 +1,13 @@
-'use strict';
+require('dotenv').config();
+
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('cakes', {
       id: {
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: process.env.NODE_ENV === 'test' ? false : true,
         type: Sequelize.INTEGER
       },
       
