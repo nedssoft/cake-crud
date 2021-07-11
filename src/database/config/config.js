@@ -32,11 +32,12 @@ module.exports = {
     database: process.env.DB_NAME || 'cake_prod_db',
     host: process.env.DB_HOST || 'localhost',
     dialect: process.env.DB_DIALECT || 'sqlite',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      }
-    },
+    storage: '.prod_db',
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false,
+    //   }
+    // },
   },
 };

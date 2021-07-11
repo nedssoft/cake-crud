@@ -7,7 +7,6 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        autoIncrement: process.env.NODE_ENV === 'test' ? false : true,
         type: Sequelize.INTEGER
       },
       

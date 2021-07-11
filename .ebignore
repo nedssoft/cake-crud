@@ -1,4 +1,4 @@
-node_modules/
+
 lerna-debug.log
 npm-debug.log
 packages/*/lib
@@ -24,7 +24,6 @@ draft*
 .vercel
 .vscode
 logs/*
-build
 public
 
 coverage
