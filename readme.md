@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.com/nedssoft/cake-crud.svg?branch=main)](https://travis-ci.com/nedssoft/cake-crud)
+[![Build Status](https://travis-ci.com/nedssoft/cake-crud.svg?branch=main)](https://travis-ci.com/nedssoft/cake-crud) [![Coverage Status](https://coveralls.io/repos/github/nedssoft/cake-crud/badge.svg?branch=main)](https://coveralls.io/github/nedssoft/cake-crud?branch=main)
 # Api Docs
 
 > BASE_URL : https://cake-apii.herokuapp.com/api/
