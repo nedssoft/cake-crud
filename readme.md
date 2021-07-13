@@ -60,7 +60,8 @@ To run the automated test, run the following command
 
 # Tools
 - [Eslint]() for style guide and linting
-- [SQLite3]()
+- [SQLite3]() For testing
+- [ElephantSQL](https://api.elephantsql.com/) For prod
 - [Coveralls]() for coverage test.
 - [Heroku](https://heroku.com/) for hosting
 
