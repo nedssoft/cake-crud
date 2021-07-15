@@ -8,7 +8,7 @@
     "dev": "nodemon build/index.js",
     "predev": "npm run dev:build",
     "clean": "rimraf build && mkdir build",
-    "build": "npm run clean && npx tsc && npm run migrate",
+    "build": "npm run clean && npx tsc",
     "dev:build": "npm run clean && npx tsc && npm run migrate",
     "prettify": "prettier --write ./src",
     "migrate": "npx sequelize-cli db:migrate",

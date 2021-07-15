@@ -1,8 +1,7 @@
-require('dotenv').config();
-
+import { QueryInterface, DataTypes } from 'sequelize';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: (queryInterface: QueryInterface, Sequelize: typeof DataTypes) => {
     return queryInterface.createTable('cakes', {
       id: {
         allowNull: false,
@@ -32,7 +31,7 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
+  down: (queryInterface: QueryInterface, Sequelize: typeof DataTypes) => {
     return queryInterface.dropTable('cakes');
   }
 };

@@ -6,5 +6,5 @@ module.exports = {
   modulePathIgnorePatterns: ["<rootDir>/src/"],
   collectCoverage: true,
   verbose: true,
-  setupFilesAfterEnv: ['./jest.setup.js'],
+  setupFilesAfterEnv: ['./jest.setup.ts'],
 };

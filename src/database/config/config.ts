@@ -1,8 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const dotenv = require('dotenv');
 
-dotenv.config();
 
 module.exports = {
   development: {
@@ -10,7 +6,7 @@ module.exports = {
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'cake_dev_db',
     host: process.env.DB_HOST || 'localhost',
-    dialect: process.env.DB_DIALECT || 'sqlite',
+    dialect: 'sqlite',
     dialectOptions: {
       ssl: {
         require: true,
