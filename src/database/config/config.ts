@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 
 module.exports = {
   development: {
@@ -6,13 +6,8 @@ module.exports = {
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'cake_dev_db',
     host: process.env.DB_HOST || 'localhost',
-    dialect: 'sqlite',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      }
-    },
+    dialect: process.env.DB_DIALECT || 'sqlite',
+    ...((process.env.DB_DIALECT === 'sqlite' || !process.env.DB_DIALECT)&& { storage: '.cake_dev_db' }),
   },
   test: {
     username: 'root',
@@ -28,11 +23,11 @@ module.exports = {
     database: process.env.DB_NAME || 'cake_prod_db',
     host: process.env.DB_HOST || 'localhost',
     dialect: process.env.DB_DIALECT || 'sqlite',
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false,
-    //   }
-    // },
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
 };

@@ -4,7 +4,7 @@ import { Sequelize } from 'sequelize-typescript';
 
 const envConfigs = require('../config/config');
 
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'development';
 const config = envConfigs[env];
 
 const uri: string = config.url || '';
