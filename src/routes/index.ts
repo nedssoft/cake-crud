@@ -1,20 +1,25 @@
 import { Router } from 'express';
-import CakeController from '../controllers/CakeController';
-import { createCakeSchema } from '../validations/schemas/cake';
-import Validator from '../validations/Validator';
+import OrderController from '../controllers/OrderController';
 const router = Router();
 
-const { listCakes, createCake, getCakeDetails, updateCake, deleteCake } =
-  new CakeController();
-
+const {
+  createOrder,
+  getActiveOrder,
+  getPosition,
+  setLeverage,
+  setTakeProfit,
+  createDeal,
+  updateTakeProfit,
+} = new OrderController();
 router.get('/', (req, res) => {
   res.json({ status: 'success', message: 'Welcome to Cake API Service' });
 });
 
-router.get('/cakes', listCakes);
-router.post('/cakes', Validator.validate(createCakeSchema), createCake);
-router.get('/cakes/:cake_id', getCakeDetails);
-router.put('/cakes/:cake_id', Validator.validate(createCakeSchema), updateCake);
-router.delete('/cakes/:cake_id', deleteCake);
-
+router.post('/orders', createOrder);
+router.get('/orders', getActiveOrder);
+router.get('/positions', getPosition);
+router.post('/leverage', setLeverage);
+router.post('/positions/tp', setTakeProfit);
+router.post('/deals', createDeal);
+router.get('/deals', updateTakeProfit);
 export default router;
