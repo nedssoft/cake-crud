@@ -1,14 +1,13 @@
-const fs = require('fs');
-const path = require('path');
 import { Sequelize } from 'sequelize-typescript';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const envConfigs = require('../config/config');
 
 const env = process.env.NODE_ENV || 'development';
 const config = envConfigs[env];
-
 const uri: string = config.url || '';
- const modelPath = '/**/*.model.js'
+const modelPath = ['development', 'test'].includes(env) ? '/**/*.model.ts' : '/**/*.model.js';
+
 let sequelize: Sequelize;
 
 if (config.url) {
@@ -25,6 +24,5 @@ if (config.url) {
     },
   });
 }
-
 
 export { Sequelize, sequelize };
